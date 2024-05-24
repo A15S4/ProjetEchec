@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Statistiques</title>
+        <link rel="icon" href="data:image/x-icon;base64,=">
+        <link rel="stylesheet" href="{% static 'css/stats.css' %}">
+        <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+        <script src="{% static 'js/theme.js' %}"></script>        
+    </head>
+    <body>
+        <div class = 'box'>
+            <div class="header"><h1>Statistiques de {{ name }}</h1></div>
+            <div class = 'stats'>
+                <h2>Taux de victoire:</h2>
+                <div>{{ winrate }}</div> 
+                <h2>Temps total de jeu:</h2> 
+                <div>{{ total_time }}</div> 
+
+            </div>
+            <div class="pieces">
+                <h2>Taux de jeu des pièces</h2>
+                <ul>
+                    <li>Roi: {{ pieces_percentage.king }}</li>
+                    <li>Reine: {{ pieces_percentage.queen }}</li>
+                    <li>Tour: {{ pieces_percentage.rook }}</li>
+                    <li>Pion: {{ pieces_percentage.pawn }}</li>
+                    <li>Cavalier: {{ pieces_percentage.knight }}</li>
+                    <li>Fou: {{ pieces_percentage.bishop }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_color" onclick="toggleThemeDiv()"></div>
+        <div class="color_choice opaque">
+            <div>Thème</div>
+            <div class="choice">
+                <div class="left">
+                <div class="elem" onclick="themePrecedent()">←</div>
+                </div>
+                <div id="themeAffiche"></div>
+                <div class="right">
+                <div class="elem" onclick="themeSuivant()">→</div>
+                </div>
+            </div>
+            <div class="ok" onclick="toggleThemeDiv()">OK</div>
+        </div>
+        <a href="/lobby" style="text-decoration: none;color:black; "><div class="exit">Retour</div></a>
+    </body>
+</html>  

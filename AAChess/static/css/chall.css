@@ -1,0 +1,222 @@
+body {
+    background-color: var(--background-color);
+    background-image: var(--background-image);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    margin: 0;
+    padding: 0;
+}
+
+.game {
+    display: flex;
+    flex-direction: row; 
+    margin-bottom: 20px; 
+}
+
+#gameboard {
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap:wrap;
+    position:absolute;
+    left: calc(50vw - 320px);
+    visibility: visible;
+    flex: 1; 
+    height: 300px; 
+    position: absolute;
+    top: 25%
+}
+
+.player{
+    background-color:var(--box-color);
+    color:var(--font-color);
+    padding-top: 100px;
+    padding-bottom: 15px;
+    font-size: 60px;
+    text-align: center;
+    border-bottom: solid;
+    width: 100%;
+}
+
+.hint {
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-image: url("../images/hint.png"); 
+    margin-left: 20px; 
+    position: absolute;
+    left: 70vw;
+    top: 40vh;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.hint:hover{
+    background-color: #b2f703;
+    border-radius: 100%;
+
+}
+
+.next{
+    visibility: hidden;
+    height: 500px;
+    width: 500px;
+    font-size: 50px;
+    background-color:var(--box-color);
+    border: solid;
+    border-radius: 10%;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    left: calc(50vw - 250px);
+    top: 30%;
+    z-index: 10;
+}
+
+.next_text{
+    text-align: center;
+}
+
+.quit{
+    background-color: rgb(182, 51, 51);
+    font-size: 32px;
+    cursor: pointer;
+    transition: background-color 0.5s, font-size 0.5s; 
+}
+
+.quit:hover{
+    background-color: rgb(221, 15, 15);
+}
+
+.next_button{
+    background-color: #67852D;
+    font-size: 32px;
+    cursor: pointer;
+    transition: background-color 0.5s, font-size 0.5s; 
+}
+
+.next_button:hover{
+    background-color: #8bc21c;
+}
+
+.button{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+button{
+    height: 60px;
+    width: 200px;
+    border: solid 3px;
+    border-radius: 20px;
+}
+
+.clapping{
+    visibility: hidden;
+    margin-left: 200px;
+    margin-top: 20px;
+    height: 600px;
+    width: 350px;
+    background-image: url("../images/clapping.gif"); 
+}
+
+.number-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px;
+    font-size: 12px;
+    color: black; 
+    pointer-events: none; 
+    z-index: 10;
+}
+
+.letter-label{
+    position: absolute;
+    top: calc(100% - 18px);
+    left: calc(100% - 12px);
+    padding: 2px;
+    font-size: 12px;
+    color: black; 
+    pointer-events: none; 
+    z-index: 10;
+}
+.square {
+    height:80px;
+    width:80px;
+    position: relative;
+}
+
+.square svg{
+    height:60px;
+    width:60px;
+    margin: 10px;
+    position: relative;
+    z-index: -9; 
+}
+
+path{
+    position: relative;
+    z-index: -10;
+}
+
+.piece{
+    position: relative;
+    z-index: 9;
+}
+
+.beige{
+    background-color: var(--lightSquare-color);
+    
+}
+
+.brown{
+    background-color: var(--darkSquare-color);
+    
+}
+
+.black{
+    fill: var(--darkPiece-color);
+}
+
+.white{
+    fill: var(--lightPiece-color);
+}
+
+.highlight {
+    background-color: #ffa500; 
+    box-sizing: border-box; 
+}
+
+.exit{
+    visibility: visible;
+    position:absolute;
+    left:30px;
+    font-size: 50px;
+    width:150px;
+    border: solid;
+    border-radius: 10%;
+    border-color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--button-color) 
+}
+
+.exit:hover{
+    background-color: var(--buttonHighlight-color)
+}
+
+.beigeE{
+    color:var(--lightSquare-color);
+}
+
+.brownE{
+    color: var(--darkSquare-color);
+}

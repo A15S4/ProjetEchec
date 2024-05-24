@@ -1,0 +1,224 @@
+.theme-classic {
+    --background-color:  #b1b1b1;
+    --background-image: none;
+    --box-color:#686564;
+    --box-color-full:#686564;
+    --button-color: #769656;
+    --darkPiece-color: #000000;
+    --lightPiece-color: rgb(255, 255, 255);
+    --darkSquare-color: rgb(116, 59, 3);
+    --lightSquare-color: rgb(225, 198, 153);
+    --buttonHighlight-color: #baca44;
+    --font-color: #000000;
+    --stats-color:black;
+
+}
+
+.theme-ocean {
+    --background-color:  #0077b6;
+    --background-image: none;
+    --box-color:#003366;
+    --box-color-full:#003366;
+    --button-color: #009688;
+    --darkPiece-color: #000000;
+    --lightPiece-color: rgb(255, 255, 255);
+    --darkSquare-color: rgb(39, 45, 129);
+    --lightSquare-color: rgb(0, 238, 255);
+    --buttonHighlight-color: #00b894;
+    --font-color: #f5e6ca;
+    --stats-color:#f5e6ca;
+}
+.theme-dark {
+    --background-color:  #1a1a2e;
+    --background-image: none;
+    --box-color:#162447;
+    --box-color-full:#162447;
+    --button-color: #3a3a3a;
+    --darkPiece-color: #000000;
+    --lightPiece-color: rgb(255, 255, 255);
+    --darkSquare-color: #3a3a3a;
+    --lightSquare-color: #8a8787;
+    --buttonHighlight-color: #24312d;
+    --font-color: rgb(165, 165, 165);
+    --stats-color:rgb(209, 209, 209);
+  }
+
+.theme-forest {
+    --background-color:  #065814;
+    --background-image: none;
+    --box-color:#7E392F;
+    --box-color-full:#7E392F;
+    --button-color: #5C2C06;
+    --darkPiece-color: #000000;
+    --lightPiece-color: rgb(255, 255, 255);
+    --darkSquare-color: #834333;
+    --lightSquare-color: #A67B5B;
+    --buttonHighlight-color: #7E481C;
+    --font-color: #000000;
+    --stats-color:rgb(0, 0, 0);
+}
+
+.theme-scifi {
+    --background-color: none;
+    --background-image: url(../images/background-image.jpg);
+    --box-color:#b347939d;
+    --box-color-full:#b34793;
+    --button-color: #56009c;
+    --darkPiece-color: #da0000;
+    --lightPiece-color: rgb(0, 124, 207);
+    --darkSquare-color: rgb(76, 0, 95);
+    --lightSquare-color: rgb(221, 162, 255);
+    --buttonHighlight-color: #9e28ff;
+    --font-color: #ffffff;
+    --stats-color:rgb(255, 255, 255);
+}
+
+.theme-fire {
+    --background-color: #fb8827;
+    --background-image: none;
+    --box-color:#af5b28;
+    --box-color-full:#af5b28;
+    --button-color: #631308;
+    --darkPiece-color: #000000;
+    --lightPiece-color: rgb(255, 255, 255);
+    --darkSquare-color: #470b04;
+    --lightSquare-color: #ea5104;
+    --buttonHighlight-color: #9c1d08;
+    --font-color: #000000;
+    --stats-color:rgb(0, 0, 0);
+}
+
+.theme-ice {
+    --background-color: #9eddee;
+    --background-image: none;
+    --box-color:#c1ccde;
+    --box-color-full:#c1ccde;
+    --button-color: #224c6c;
+    --darkPiece-color: #000000;
+    --lightPiece-color: rgb(255, 255, 255);
+    --darkSquare-color: #1966ad;
+    --lightSquare-color: #79a3d1;
+    --buttonHighlight-color: #568dbc;
+    --font-color: #000000;
+    --stats-color:rgb(0, 0, 0);
+}
+
+.btn_color {
+    height: 100px;
+    width: 100px;
+    background-image: url(../images/settings_icon.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    cursor: pointer;
+}
+.color_choice{
+    display: none;
+    height: 250px;
+    width: 400px;
+    font-size: 40px;
+    background-color:var(--box-color);
+    border: solid;
+    border-radius: 10%;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: calc(50vw - 200px);
+    top: 30%;
+    z-index: 10;
+    
+}
+
+.opaque{
+    background-color: var(--box-color-full);
+}
+
+.left,.right{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 25%;
+}
+.left{
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.right{
+    justify-content: flex-start;
+    height: 100%;
+}
+
+#colAffiche{
+    background-color: white;
+    height: 80%;
+    flex-basis: 50%;
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding-top: 6px;
+    font-weight: bold;
+    
+}
+#themeAffiche{
+    background-color: white;
+    height: 80%;
+    width: 350px;
+    flex-basis: 50%;
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding-top: 6px;
+    font-weight: bold;
+    color:black;
+}
+
+.choice{
+    flex-basis: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 25px;
+    flex-direction: row;
+}
+
+.elem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;
+    border: 2px solid #000000;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--button-color);
+    border-radius: 10px;
+    padding-bottom: 5px;
+}
+
+.ok{
+    margin-top: 25px;
+    background-color: var(--button-color);
+    border: 2px solid #000000;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+    width:75px;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.ok:hover,.elem:hover{
+    background-color: var(--buttonHighlight-color);
+}

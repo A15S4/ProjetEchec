@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/x-icon;base64,=">
+    <title>Règles de jeu</title>
+    <link rel="stylesheet" href="{% static 'css/rules.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    <script src="{% static 'js/theme.js' %}"></script>
+</head>
+<body>
+    <a href="/lobby" style="text-decoration: none;color:black; "><div class="exit">Retour</div></a>
+    <div class="btn_color" onclick="toggleThemeDiv()" style="position: fixed;"></div>
+    <div class="color_choice opaque">
+        <div>Thème</div>
+        <div class="choice">
+            <div class="left">
+              <div class="elem" onclick="themePrecedent()">←</div>
+            </div>
+            <div id="themeAffiche"></div>
+            <div class="right">
+              <div class="elem" onclick="themeSuivant()">→</div>
+            </div>
+          </div>
+          <div class="ok" onclick="toggleThemeDiv()">OK</div>
+    </div>
+    <div class="container">
+        <h1>Règles</h1>
+        <div class="piece">
+            <h2>Roi (1 par joueur) :</h2>
+            <div class="inner_piece">
+                <img src="../static/images/Rules/king.png">
+                <p>Le roi est la pièce la plus importante. Il peut se déplacer d'une seule case dans n'importe quelle direction. Si le roi est menacé d'échec et qu'aucun mouvement ne peut le protéger, c'est l'échec et le joueur doit trouver un moyen de le protéger.</p>
+            </div>
+        </div>
+        <div class="piece">
+            <h2>Dame (1 par joueur) :</h2>
+            <div class="inner_piece">
+                <img src="../static/images/Rules/queen.png">
+                <p>La dame est la pièce la plus puissante. Elle peut se déplacer horizontalement, verticalement et en diagonale sur n'importe quelle distance.</p>
+            </div>
+        </div>
+        <div class="piece">
+            <h2>Tour (2 par joueur) :</h2>
+            <div class="inner_piece">
+                <img src="../static/images/Rules/rook.png">
+                <p>Les tours se déplacent horizontalement ou verticalement sur n'importe quelle distance. Elles ne peuvent pas sauter par-dessus d'autres pièces.</p>
+            </div>
+        </div>
+        <div class="piece">
+            <h2>Fou (2 par joueur) :</h2>
+            <div class="inner_piece">
+                <img src="../static/images/Rules/bishop.png">
+                <p>Les fous se déplacent en diagonale sur n'importe quelle distance. Comme les tours, ils ne peuvent pas sauter par-dessus d'autres pièces.</p>
+            </div>
+        </div>
+        <div class="piece">
+            <h2>Cavalier (2 par joueur) :</h2>
+            <div class="inner_piece">
+                <img src="../static/images/Rules/knight.png">
+                <p>Les cavaliers se déplacent de manière particulière en formant un L : deux cases dans une direction (horizontale ou verticale) suivies d'un déplacement d'une case à angle droit. Les cavaliers sont les seules pièces capables de sauter par-dessus d'autres pièces.</p>
+            </div>
+        </div>
+        <div class="piece">
+            <h2>Pions (8 par joueur) :</h2>
+            <div class="inner_piece">
+                <img src="../static/images/Rules/pawn.png">
+                <p>Les pions se déplacent vers l'avant d'une case à la fois, mais avec possibilité d'effectuer leur première avancée de deux cases. Ils capturent les pièces adverses en se déplaçant en diagonale. Lorsqu'un pion atteint la huitième rangée, il peut être promu en une autre pièce (sauf un roi) selon le choix du joueur.</p>
+            </div>
+        </div>
+        <div class="piece">
+            <h2>Roque :</h2>
+
+
+            <div class="inner_piece">
+                <img src="../static/images/Rules/castle">
+                <div>
+                    <div class="roque">
+            
+                        <h3>Petit Roque :</h3>
+                        <p>Le roi se déplace de deux cases vers la droite ou la gauche. La tour sur le côté correspondant du roi saute par-dessus le roi et se place à la case adjacente à laquelle le roi s'est déplacé. Conditions pour effectuer le petit roque : ni le roi ni la tour n'ont bougé auparavant, il n'y a pas de pièces entre le roi et la tour, et le roi ne peut pas être en échec ou traverser une case menacée.</p>
+                    </div>
+                    <div class="roque">
+                        
+                        <h3>Grand Roque :</h3>
+                        <p>Le roi se déplace de deux cases vers la droite ou la gauche. La tour sur le côté correspondant du roi saute par-dessus le roi et se place à la case adjacente à celle à laquelle le roi s'est déplacé. Conditions pour effectuer le grand roque : ni le roi ni la tour n'ont bougé auparavant, il n'y a pas de pièces entre le roi et la tour, et le roi ne peut pas être en échec ou traverser une case menacée.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="piece">
+            
+            <h2>En passant :</h2>
+            <div class="inner_piece">
+
+                <img src="../static/images/Rules/en_passant.gif">
+                <p>Condition initiale : Un pion adverse avance de deux cases depuis sa position de départ pour se retrouver à côté d'un pion ennemi. Le pion qui a avancé de deux cases a la possibilité d'être capturé "en passant" par le pion ennemi. Capturer en passant : Le pion ennemi peut capturer le pion adverse comme s'il n'avait avancé qu'une seule case. La capture en passant se fait immédiatement après que le pion adverse a avancé de deux cases. Conséquences : Le pion capturé est retiré du plateau, et le pion ennemi se déplace à la case que le pion capturé aurait occupée s'il n'avait avancé qu'une seule case.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

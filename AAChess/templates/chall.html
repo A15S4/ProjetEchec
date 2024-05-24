@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Défis</title>
+        <link rel="icon" href="data:image/x-icon;base64,=">
+        <link rel="stylesheet" href="{% static 'css/chall.css' %}">
+        <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+        <script src="{% static 'js/challenge.js' %}"></script>
+        <script src="{% static 'js/piece.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+
+    </head>
+    <body>
+        <div class="player"> Quel est le meilleur mouvement? Vous êtes les <span id="player"></span>.</div>
+        <div class="clapping"></div>
+        <div class="next">
+            <div class="next_text"></div>
+            <div class="button">
+                <a href="/lobby"><button class="quit">Quitter</button></a>
+                <a href=""><button class="next_button">Suivant</button></a>
+            </div>
+        </div>
+        <div class="game">
+            <div id="gameboard"></div>
+            <div class="hint"></div>
+        </div>
+        <div class="btn_color" onclick="toggleThemeDiv()"></div>
+        <div class="color_choice opaque">
+            <div>Thème</div>
+            <div class="choice">
+                <div class="left">
+                <div class="elem" onclick="themePrecedent()">←</div>
+                </div>
+                <div id="themeAffiche"></div>
+                <div class="right">
+                <div class="elem" onclick="themeSuivant()">→</div>
+                </div>
+            </div>
+            <div class="ok" onclick="toggleThemeDiv()">OK</div>
+        </div>
+        <a href="/lobby" style="text-decoration: none;color:black; "><div class="exit">Quitter</div></a>
+        <script>
+            var username = "{{ username }}";
+            var board_1 ="{{game_state_1}}";
+            var turn_1 = "{{turn_1}}";
+            var board_2 ="{{game_state_2}}";
+            var turn_2 = "{{turn_2}}";
+        </script>
+    </body>
+</html>

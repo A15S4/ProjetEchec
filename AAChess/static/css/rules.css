@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-color);
+    background-image: var(--background-image);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    color: var(--font-color);
+}
+
+text{
+    font-family: "Open Sans", sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--box-color);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-family: "Open Sans", sans-serif;
+    
+}
+
+h2 {
+    margin-top: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+h3{
+    margin-left: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+p {
+    line-height: 1.6;
+    color: var(--font-color);
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.piece{
+    margin: 50px;
+}
+
+.inner_piece{
+    display: flex;
+    align-items: center;
+}
+
+.inner_piece p{
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+img{
+    height: 300px;
+    width: 300px;
+}
+
+.exit{
+    visibility: visible;
+    position:fixed;
+    left:30px;
+    font-size: 45px;
+    width:150px;
+    border: solid;
+    border-radius: 10%;
+    border-color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--button-color) 
+}
+
+.exit:hover{
+    background-color: var(--buttonHighlight-color)
+}

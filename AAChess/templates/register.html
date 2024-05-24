@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inscription</title>
+        <link rel="icon" href="data:image/x-icon;base64,=">
+        <link rel="stylesheet" href="{% static 'css/register.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    </head>
+    <script>
+        localStorage.clear();
+    </script>
+    <body>
+        {% if form.errors %}
+        <div class="errorlist">
+            <h2>Erreurs de formulaire :</h2>
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    <ul>
+                        {% for error in errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        <video autoplay muted loop id="background-video">
+            <source src="../static/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>         
+        <div class="box">
+        <form action="" method="post" id="form">
+            {% csrf_token %}
+            <div class="header">Inscription</div>
+                <div class="array">
+                    <div class="question">Nom d'utilisateur :</div>
+                    <div class="reponse">{{ form.username }}</div>
+                </div>
+                <div class="array">
+                    <div class="question">Prénom :</div>
+                    <div class="reponse">{{ form.first_name }}</div>
+                </div>
+                <div class="array">
+                    <div class="question">Nom :</div>
+                    <div class="reponse">{{ form.last_name }}</div>
+                </div>
+                <div class="array">
+                    <div class="question">Adresse courriel :</div>
+                    <div class="reponse">{{ form.email }}</div>
+                </div>
+                <div class="array">
+                    <div class="question">Mot de passe :</div>
+                    <div class="reponse">{{ form.password1 }}</div>
+                </div>
+                <div class="array">
+                    <div class="question">Confirmation mot de passe :</div>
+                    <div class="reponse">{{ form.password2 }}</div>
+                </div>
+                <div class="connection"><button type="submit">Créer</button></div>
+            <a href="{% url 'index' %}">Retour</a>
+        </form>
+        </div>
+    </body>
+</html>  

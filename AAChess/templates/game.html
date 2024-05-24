@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Partie</title>
+        <link rel="icon" href="data:image/x-icon;base64,=">
+        <link rel="stylesheet" href="{% static 'css/game.css' %}"> 
+        <link rel="stylesheet" href="{% static 'css/theme.css' %}"> 
+        <script src="{% static 'js/game.js' %}"></script>
+        <script src="{% static 'js/piece.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    </head>
+    <script>
+        var username = "{{ username }}";
+    </script>
+    <body>
+        <div class="btn_color" onclick="toggleThemeDiv()"></div>
+        <div class="color_choice opaque">
+            <div>Thème</div>
+            <div class="choice">
+                <div class="left">
+                <div class="elem" onclick="themePrecedent()">←</div>
+                </div>
+                <div id="themeAffiche"></div>
+                <div class="right">
+                <div class="elem" onclick="themeSuivant()">→</div>
+                </div>
+            </div>
+            <div class="ok" onclick="toggleThemeDiv()">OK</div>
+        </div>
+        <div class="loading">
+            <div class="logo"></div>
+            <div class="loading-txt">Chargement</div>
+        </div>
+        <div class="end-box opaque">
+            <div class="end-text"></div>
+            <div class="end-button">
+                <div class="back">Quitter</div>
+            </div>
+        </div>
+        <div class="leftSide">
+            <div class="name" id="enemyN"></div>
+            <div class="quit"><button onclick="preQuit()">Quitter</button></div>
+            <div class="name" id="playerN"></div>
+        </div>
+        <div class="mid">
+            <div class="enemy">
+                <div class="timer" id="enemyT"></div>
+                <div class="pieces" id="enemyP"></div>
+            </div>
+            <div id="gameboard"></div>
+            <div class="player">
+                <div class="pieces" id="playerP"></div>
+                <div class="timer" id="playerT"></div>
+            </div>
+        </div>
+        <div class="rightSide">
+            <div class="settings"></div>
+            <div class="turn"></div>
+            <div class="gameType"></div>
+        </div>
+        <div class="exit-box opaque">
+            <div class="confirmation">Êtes-vous certain de vouloir quitter?</div>
+            <div class="choice">
+                <div class="yes">Oui</div>
+                <div class="no">Non</div>
+            </div>
+        </div>
+    </body>
+</html>  

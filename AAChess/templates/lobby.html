@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lobby</title>
+        <link rel="icon" href="data:image/x-icon;base64,=">
+        <link rel="stylesheet" href="{% static 'css/lobby.css' %}">
+        <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+        <script src="{% static 'js/lobby.js' %}"></script>
+        <script src="{% static 'js/theme.js' %}"></script>
+    </head>
+    <body> 
+        <div class="btn-container">
+            <form class="forms" action="" method="POST">
+                {% csrf_token %}
+                <div class="btn-list">
+                    <button name="type" value="stats">Statistiques</button>
+                    <button name="type" value="rules">Règles</button>
+                    <button name="type" value="logout">Deconnexion</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="main">
+
+            <div class="stats">
+                <h2>Il y a présentement:</h2>
+                
+                <div class="stats-content">
+                    <div>
+                        
+                        {% if active_users %}
+                            {% if active_users == 1 %}
+                                {{ active_users }} usager connecté
+                            {% else %}
+                                {{ active_users }} usagers connectés
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                    <div>
+                        20 458 parties jouées
+                    </div>
+                </div>
+               
+            </div>  
+            
+            <div class="box opaque">
+                <div class="h1"><h1>Difficulté</h1></div>
+                <div class="choice">
+                    <div class="left">
+                        <div class="elem" onclick="diffPrecedent()">←</div>
+                    </div>
+                    <div id="diffAffiche"></div> 
+                    <div class="right">
+                        <div class="elem" onclick="diffSuivant()">→</div>
+                    </div>
+                </div>
+                <div class="h1"><h1>Couleur des pièces</h1></div>
+                <div class="choice">
+                    <div class="left">
+                        <div class="elem" onclick="colPrecedent()">←</div>
+                    </div>
+                    <div id="colAffiche"></div> 
+                    <div class="right">
+                        <div class="elem" onclick="colSuivant()">→</div>
+                    </div>
+                </div>
+                <div class="demarre">
+                    <form id="training" action="/training/" method="POST">
+                        {% csrf_token %}
+                        <button name="type" value="training">Démarrer</button>
+                        <input type="hidden" name="couleur_piece" id="couleur_piece">
+                        <input type="hidden" name="difficulte" id="difficulte">
+                    </form>
+                </div>
+            </div>
+
+           
+            <div class="btn-play">
+                <button id="bouton" onclick="toggleDiv()">Entrainement</button>
+                <form class="forms" action="" method="POST">
+                    {% csrf_token %}
+                    <button name="type" value="play">Jouer en ligne</button>
+                    <button name="type" value="chall">Défi</button>
+                </form>
+            </div>
+            
+        </div>
+        <div class="logo">
+            <img src="../static/images/logo.png" height="170" width="300">
+        </div>
+
+        <div class="btn_color" onclick="toggleThemeDiv()"></div>
+        <div class="color_choice opaque">
+            <div>Thème</div>
+            <div class="choice">
+                <div class="left">
+                <div class="elem" onclick="themePrecedent()">←</div>
+                </div>
+                <div id="themeAffiche"></div>
+                <div class="right">
+                <div class="elem" onclick="themeSuivant()">→</div>
+                </div>
+            </div>
+            <div class="ok" onclick="toggleThemeDiv()">OK</div>
+        </div>
+    </body>
+</html>  
